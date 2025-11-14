@@ -40,3 +40,58 @@
 .read-the-docs {
   color: #888;
 } */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  background-color: #2a3663;
+  padding: 20px;
+  color: #faf6e3;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.body-div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 20px;
+}
+.body-sub-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-div {
+  margin-top: auto;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+h1 {
+  font-family: "Rubik Vinyl", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
