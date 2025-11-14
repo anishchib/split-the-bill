@@ -1,119 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2 Column Equal Width & Height Grid</title>
     <style>
-      /* Grid container */
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-        gap: 2.5px; /* Space between columns and rows */
-        align-items: stretch; /* Make all items in a row equal height */
-        padding: 10px;
-        height: 100vh /* Full viewport height for demonstration */;
-        background-color: #f0f0f0;
-      }
-
-      /* Grid items */
-      .grid-item {
-        background-color: #4caf50;
-        color: white;
-        padding: 20px;
-        font-size: 18px;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        gap: 10px;
-      }
-
-      .friend-list-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background-color: burlywood;
-      }
-
-      .add-friend-container {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-        background-color: aquamarine;
-      }
-      img {
-        width: 64px;
-        height: 32px;
-        vertical-align: middle;
-        margin-right: 8px;
-      }
-      button {
-        padding: 5px 10px;
+      /* Base button styling */
+      .button-outline {
+        background-color: transparent; /* No fill */
+        color: #007bff; /* Blue text */
+        border: 2px solid #007bff; /* Blue outline */
+        padding: 10px 20px;
         font-size: 16px;
+        border-radius: 6px; /* Rounded corners */
         cursor: pointer;
+        transition: all 0.3s ease; /* Smooth hover effect */
+      }
+
+      /* Hover effect */
+      .button-outline:hover {
+        background-color: #007bff; /* Fill with blue */
+        color: white; /* White text */
+      }
+
+      /* Focus state for accessibility */
+      .button-outline:focus {
+        outline: 3px solid #66b2ff; /* Lighter blue focus ring */
+        outline-offset: 2px;
       }
     </style>
   </head>
   <body>
-    <div class="grid-container">
-      <div class="grid-item">
-        <div class="friend-list-container">
-          <h1>Friend List</h1>
-          <ul>
-            <li>
-              <a href="#"
-                ><img
-                  src="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/smile.svg" /></a
-              >Bikku
-              <button style="margin-left: 20px">Click</button>
-            </li>
-            <li>
-              <a href="#"
-                ><img src="https://www.svgrepo.com/show/4733/samples.svg" /></a
-              >Prince
-              <button style="margin-left: 20px">Click</button>
-            </li>
-            <li>
-              <a href="#"
-                ><img
-                  src="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/smile.svg" /></a
-              >Sandy
-              <button style="margin-left: 20px">Click</button>
-            </li>
-            <li>
-              <a href="#"
-                ><img
-                  src="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/smile.svg" /></a
-              >Raja
-              <button style="margin-left: 20px">Click</button>
-            </li>
-          </ul>
-        </div>
-        <div class="add-friend-container">
-          <h2>Add Friend</h2>
-          <div>
-            <label for="friend-name">Name:</label>
-            <input type="text" placeholder="Friend's Name" />
-          </div>
-          <div>
-            <label for="friend-email">Email:</label>
-            <input type="text" placeholder="Friend's Email" />
-          </div>
-          <div>
-            <button>Add Friend</button>
-          </div>
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </div>
-      <div class="grid-item">
-        This is a longer text block that will still match the height of the
-        first column in the same row.
-      </div>
-      <!-- <div class="grid-item">Another row</div>
-      <div class="grid-item">Content with<br />multiple<br />lines</div> -->
-    </div>
+    <button class="button-outline">Blue Outline Button</button>
   </body>
 </html>
