@@ -1,10 +1,6 @@
 import React from "react";
 
 export const Header = () => {
-  return (
-    <div className="header-div">
-      <h1>SPLIT-THE-BILL</h1>
-    </div>
-  );
+  return <h1>SPLIT-THE-BILL</h1>;
 };
 export default Header;

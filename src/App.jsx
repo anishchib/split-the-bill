@@ -5,24 +5,59 @@ import "./App.css";
 import { Header } from "./Header.jsx";
 import { Footer } from "./Footer.jsx";
 import { Button } from "./Button.jsx";
+import { FriendListDisplay } from "./FriendListDisplay.jsx";
+import AddUserForm from "./AddUserForm.jsx";
+
+const initialFriends = [
+  {
+    id: 118836,
+    name: "Clark",
+    image: "https://i.pravatar.cc/48?u=118836",
+    balance: -7,
+  },
+  {
+    id: 933372,
+    name: "Sarah",
+    image: "https://i.pravatar.cc/48?u=933372",
+    balance: 20,
+  },
+  {
+    id: 499476,
+    name: "Anthony",
+    image: "https://i.pravatar.cc/48?u=499476",
+    balance: 0,
+  },
+];
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const [displayForm, setDisplayForm] = useState(false);
+  const handleSetDisplay = () => {
+    setDisplayForm(!displayForm);
+  };
   return (
     <>
-      <Header />
-      <div className="body-div">
+      <div className="main-div">
+        <Header />
         <div className="body-sub-div">
-          <h2>Welcome to Split-The-Bill App by Anish</h2>
-          <Button>Add User</Button>
+          <div className="half-div">
+            <FriendListDisplay initFriendList={initialFriends} />
+
+            {displayForm && <AddUserForm />}
+            <div className="friend-add-btn">
+              <Button onClick={handleSetDisplay}>
+                {displayForm ? "Close" : "Add a Friend"}
+              </Button>
+            </div>
+          </div>
+          <div className="half-div">
+            <h2>Get Started Here fpr App Working</h2>
+            <Button> Submit </Button>
+          </div>
         </div>
-        <div className="body-sub-div">
-          <h2>Get Started Here fpr App Working</h2>
-          <Button> Submit </Button>
-        </div>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

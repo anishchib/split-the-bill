@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Button = ({ children }) => {
+export const Button = ({ children, onClick }) => {
   return (
     <div>
-      <button className="button-outline">{children}</button>
+      <button className="button-outline" onClick={onClick}>
+        {children}
+      </button>
     </div>
   );
 };
