@@ -3,8 +3,7 @@ import { Button } from "./Button";
 
 export const FriendListDisplay = ({
  
-  initFriendList
-}) => {
+  initFriendList}) => {
   return (
     <ul>
       {initFriendList.map((friend) => (

@@ -32,18 +32,24 @@ const initialFriends = [
 function App() {
   const [count, setCount] = useState(0);
   const [displayForm, setDisplayForm] = useState(false);
+
+  const [friendList,setFriendList] = useState(initialFriends)
   const handleSetDisplay = () => {
     setDisplayForm(!displayForm);
   };
+  const handleSetFriendList = (newfriend)=>
+  {
+    setFriendList(friends => [...friends,newfriend])
+  }
   return (
     <>
       <div className="main-div">
         <Header />
         <div className="body-sub-div">
           <div className="half-div">
-            <FriendListDisplay initFriendList={initialFriends} />
+            <FriendListDisplay initFriendList={friendList}  />
 
-            {displayForm && <AddUserForm />}
+            {displayForm && <AddUserForm onHandleSetFriendList = { handleSetFriendList }/>}
             <div className="friend-add-btn">
               <Button onClick={handleSetDisplay}>
                 {displayForm ? "Close" : "Add a Friend"}
