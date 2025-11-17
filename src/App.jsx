@@ -7,6 +7,7 @@ import { Footer } from "./Footer.jsx";
 import { Button } from "./Button.jsx";
 import { FriendListDisplay } from "./FriendListDisplay.jsx";
 import AddUserForm from "./AddUserForm.jsx";
+import SplitBillForm from "./SplitBillForm.jsx";
 
 const initialFriends = [
   {
@@ -34,6 +35,9 @@ function App() {
   const [displayForm, setDisplayForm] = useState(false);
 
   const [friendList,setFriendList] = useState(initialFriends)
+  const[selectFriend,setSelectfriend] = useState(null)
+
+
   const handleSetDisplay = () => {
     setDisplayForm(!displayForm);
   };
@@ -41,25 +45,26 @@ function App() {
   {
     setFriendList(friends => [...friends,newfriend])
   }
+  const handleSetSelectFriend = (friend)=>{
+    setSelectfriend(friend);
+  }
   return (
     <>
       <div className="main-div">
         <Header />
         <div className="body-sub-div">
           <div className="half-div">
-            <FriendListDisplay initFriendList={friendList}  />
+            <FriendListDisplay initFriendList={friendList} onSetSelectFriend = {handleSetSelectFriend}  />
 
             {displayForm && <AddUserForm onHandleSetFriendList = { handleSetFriendList }/>}
-            <div className="friend-add-btn">
-              <Button onClick={handleSetDisplay}>
-                {displayForm ? "Close" : "Add a Friend"}
-              </Button>
-            </div>
+                  <div className="friend-add-btn">
+                    <Button onClick={handleSetDisplay}>
+                      {displayForm ? "Close" : "Add a Friend"}
+                    </Button>
+                  </div>
+           
           </div>
-          <div className="half-div">
-            <h2>Get Started Here fpr App Working</h2>
-            <Button> Submit </Button>
-          </div>
+         {selectFriend && <SplitBillForm selectedFriend={selectFriend}/>}  
         </div>
 
         <Footer />

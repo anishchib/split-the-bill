@@ -2,13 +2,13 @@ import React from "react";
 import { Button } from "./Button";
 
 export const FriendListDisplay = ({
- 
+ onSetSelectFriend,
   initFriendList}) => {
   return (
     <ul>
       {initFriendList.map((friend) => (
         <Friend
-          
+          onSetSelectFriend = {onSetSelectFriend}
           friend={friend}
           key={friend.id}
         />
@@ -17,7 +17,8 @@ export const FriendListDisplay = ({
   );
 };
 
-const Friend = ({ friend }) => {
+const Friend = ({ friend , onSetSelectFriend }) => {
+  
   return (
     <li>
       <div className="innerContent">
@@ -25,7 +26,7 @@ const Friend = ({ friend }) => {
         <h3>{friend.name}</h3>
       </div>
       <div className="inner-btn-div">
-        <Button>Select</Button>
+        <Button onClick={()=>onSetSelectFriend(friend)}>Select</Button>
       </div>
     </li>
   );
