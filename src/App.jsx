@@ -46,15 +46,15 @@ function App() {
     setFriendList(friends => [...friends,newfriend])
   }
   const handleSetSelectFriend = (friend)=>{
-    setSelectfriend(friend);
+    setSelectfriend((cur) => (cur?.id === friend.id)?null:friend);
   }
   return (
     <>
       <div className="main-div">
         <Header />
         <div className="body-sub-div">
-          <div className="half-div">
-            <FriendListDisplay initFriendList={friendList} onSetSelectFriend = {handleSetSelectFriend}  />
+          <div className="half-div1">
+            <FriendListDisplay selectFriend = {selectFriend} initFriendList={friendList} onSetSelectFriend = {handleSetSelectFriend}  />
 
             {displayForm && <AddUserForm onHandleSetFriendList = { handleSetFriendList }/>}
                   <div className="friend-add-btn">
@@ -65,6 +65,9 @@ function App() {
            
           </div>
          {selectFriend && <SplitBillForm selectedFriend={selectFriend}/>}  
+
+
+
         </div>
 
         <Footer />

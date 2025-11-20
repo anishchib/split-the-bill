@@ -2,12 +2,14 @@ import React from "react";
 import { Button } from "./Button";
 
 export const FriendListDisplay = ({
+  selectFriend,
  onSetSelectFriend,
   initFriendList}) => {
   return (
     <ul>
       {initFriendList.map((friend) => (
         <Friend
+        selectFriend = {selectFriend}
           onSetSelectFriend = {onSetSelectFriend}
           friend={friend}
           key={friend.id}
@@ -17,7 +19,7 @@ export const FriendListDisplay = ({
   );
 };
 
-const Friend = ({ friend , onSetSelectFriend }) => {
+const Friend = ({ selectFriend, friend , onSetSelectFriend }) => {
   
   return (
     <li>
@@ -26,7 +28,7 @@ const Friend = ({ friend , onSetSelectFriend }) => {
         <h3>{friend.name}</h3>
       </div>
       <div className="inner-btn-div">
-        <Button onClick={()=>onSetSelectFriend(friend)}>Select</Button>
+        <Button onClick={()=>onSetSelectFriend(friend)}>{(selectFriend?.id === friend.id) ? 'close' : 'select'}</Button>
       </div>
     </li>
   );

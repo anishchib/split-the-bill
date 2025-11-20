@@ -78,7 +78,7 @@ body {
   border-radius: 50px;
   padding: 0 20px;
 }
-.half-div {
+.half-div1 {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -87,7 +87,16 @@ body {
   min-height: 100vh;
   /* border-radius: px; */
 }
-li {
+.half-div2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* border: solid #2a3663 2px; */
+  flex: 1;
+  min-height: 100vh;
+  /* border-radius: px; */
+}
+.half-div1 li {
   list-style: none;
   /* border: 1px solid #812323;  1px solid gray border */
   padding: 0 5px; /* Add some padding for spacing */
@@ -161,7 +170,7 @@ h1 {
   padding: 0 300px;
   /* border: #007bff 5px solid; */
 }
-.half-div li h3 {
+.half-div1 li h3 {
   margin: 10px 50px;
 }
 ul {
@@ -191,11 +200,11 @@ ul {
   outline: 3px solid #66b2ff; /* Lighter blue focus ring */
   outline-offset: 2px;
 }
-input[type="text"] {
+input[type="text"],select {
   width: 250px; /* Sets the width of the input field */
   padding: 5px; /* Adds padding inside the input field */
-  border: 1px solid #ccc; /* Defines a light gray border */
-  border-radius: 5px; /* Rounds the corners of the input field */
+  border: 1px solid lightgray; /* Defines a light gray border */
+  border-radius: 10px; /* Rounds the corners of the input field */
   font-family: Arial, sans-serif; /* Specifies the font family */
   font-size: 16px; /* Sets the font size */
   color: #333; /* Sets the text color */
@@ -205,4 +214,32 @@ input[type="text"]:focus {
   border-color: #007bff; /* Changes border color on focus */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle blue shadow on focus */
   outline: none; /* Removes the default browser outline */
+}
+.half-div2 ul{
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.half-div2 li{
+  display: flex;
+  flex-direction: column;
+
+}
+.half-div2 li label{
+  font-size: 15px;
+  font-weight:900;
+  font-style: normal;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+.half-div2 h3 {
+ 
+  font-size:x-large;
+  font-style: normal;
+  text-transform: uppercase;
+
 }
