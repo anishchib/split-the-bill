@@ -14,17 +14,24 @@ const SplitBillForm = ({selectedFriend}) => {
     setExpense(val);
   }
 
+
+const handleFormData= (e)=>
+{
+  e.preventDefault(); // Prevents the default page refresh
+}
+
+
   return (
     <div className="half-div2">
                 <h3>
                   Split the Bill with {selectedFriend.name}
                   </h3>
-                <form>
+                <form onSubmit={handleFormData}>
                   
                   <ul>
                     <li>
                     <label >Bill Value</label>
-                    <input type='text'onChange={handleSetBillValue} value={billValue}></input>
+                    <input type='text' onChange={handleSetBillValue} value={billValue}></input>
                     </li>
                     <li>
                       <label >Your Expense</label>
@@ -45,7 +52,7 @@ const SplitBillForm = ({selectedFriend}) => {
 
                     </li>
                     <li>
-                     <Button>Split Bill</Button>
+                     <Button type="submit">Split Bill</Button>
                     </li>
                   </ul>
                 </form>
